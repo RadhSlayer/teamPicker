@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<style>
+#welcome-msg{
+    margin-bottom:15%;
+}
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +15,41 @@
     <title>Volleyball Team Picker</title>
 </head>
 <body>
-    
+    <p align="center" id="welcome-msg">Welcome to volleyball team picker!</p>
+
+    <div align="center">
+        <label for="nameInput">Player name:</label>
+        <input type=text" id="nameInput">
+        <label for="skillSelect">Skill level:</label> 
+            <select id="skillSelect">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        <button id="add" onclick="addPlayer()">Add</button> 
+    </div>
 </body>
+
+<script>
+    var players = [];
+    function addPlayer(){
+       player = new Player(document.getElementById("nameInput").value, document.getElementById("skillSelect").value);
+       //console.log(player); 
+       players.push(player);
+    }
+
+    class Player{
+        constructor(name,skill){
+            this.name= name;
+            this.skill = skill;
+        }
+    }
+</script>
 </html>
