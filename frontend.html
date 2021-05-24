@@ -5,6 +5,21 @@
 #welcome-msg{
     margin-bottom:15%;
 }
+
+.playerTable{
+    margin-top:5%;
+}
+
+table{
+    border-collapse: collapse;
+    width:50%;
+}
+
+td,th{
+    border: 1px solid #dddddd00;
+    text-align: center;
+    padding:8px;
+}
 </style>
 
 <head>
@@ -35,6 +50,18 @@
             </select>
         <button id="add" onclick="addPlayer()">Add</button> 
     </div>
+
+    <div align="center" class="playerTable">
+        <table id="playerTable">
+            <tr>
+                <th>Player</th>
+                <th>Skill</th>
+                <th></th>
+            </tr>
+
+            
+        </table>
+    </div>
 </body>
 
 <script>
@@ -43,12 +70,42 @@
        player = new Player(document.getElementById("nameInput").value, document.getElementById("skillSelect").value);
        //console.log(player); 
        players.push(player);
+       displayTable();
     }
 
     class Player{
         constructor(name,skill){
             this.name= name;
             this.skill = skill;
+        }
+    }
+
+    function displayTable(){
+        var table = document.getElementById("playerTable");
+        clearTable();
+        for(var i =0; i < players.length; i++){
+            var plyr = players[i];
+
+            var row = document.createElement("tr");
+            var btnRemove = document.createElement("button");
+            btnRemove.innerHTML = "REMOVE";
+            var properties = ['name', 'skill'];
+
+            for(var j =0; j < properties.length; j++){
+                var cell = document.createElement("td");
+                cell.innerHTML = plyr[properties[j]];
+                row.appendChild(cell);
+                row.appendChild(btnRemove);
+            }
+            table.appendChild(row);
+
+        }
+    }
+
+    function clearTable(){
+        var tb = document.getElementById('playerTable');
+        while(tb.rows.length > 1) {
+        tb.deleteRow(1);
         }
     }
 </script>
