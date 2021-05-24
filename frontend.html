@@ -89,6 +89,10 @@ td,th{
             var row = document.createElement("tr");
             var btnRemove = document.createElement("button");
             btnRemove.innerHTML = "REMOVE";
+            btnRemove.id = plyr['name'] + "remove";
+            btnRemove.onclick = ()=> {
+                
+            };
             var properties = ['name', 'skill'];
 
             for(var j =0; j < properties.length; j++){
