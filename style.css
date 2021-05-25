@@ -1,0 +1,19 @@
+#welcome-msg{
+    margin-bottom:15%;
+}
+
+.playerTable{
+    margin-top:5%;
+}
+
+table{
+    margin-left: 2.5%;
+    border-collapse: collapse;
+    width:50%;
+}
+
+td,th{
+    border: 1px solid #dddddd00;
+    text-align: center;
+    padding:8px;
+}
