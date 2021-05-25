@@ -89,8 +89,17 @@ td,th{
             var row = document.createElement("tr");
             var btnRemove = document.createElement("button");
             btnRemove.innerHTML = "REMOVE";
-            btnRemove.id = plyr['name'] + "remove";
+            btnRemove.id = plyr['name'];
             btnRemove.onclick = ()=> {
+                for(var k = 0; k < players.length; k++){
+                    let currPlayer = players[k];
+                    if(currPlayer.name == btnRemove.id){
+                        players.splice(k,1);
+                    }
+                    clearTable();
+                    displayTable();
+                      
+                }
                 
             };
             var properties = ['name', 'skill'];
