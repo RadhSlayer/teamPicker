@@ -32,16 +32,21 @@ var input = document.getElementById("nameInput");
             btnRemove.innerHTML = "REMOVE";
             btnRemove.id = plyr['name'];
             btnRemove.onclick = ()=> {
-                for(var k = 0; k < players.length; k++){
+               /* for(var k = 0; k < players.length; k++){
                     let currPlayer = players[k];
-                    if(currPlayer.name === btnRemove.id){
-                        players.splice(k,1);
+                    if(currPlayer['name'] === btnRemove.id){
+                        /*players.splice(k,1);
                         console.log(players);
+                        
                     }
                     clearTable();
                     displayTable();
                       
-                }
+                } */
+                
+                players = players.filter(player => player.name!==btnRemove.id);
+                clearTable();
+                displayTable();
                 
             };
             var properties = ['name', 'skill'];
