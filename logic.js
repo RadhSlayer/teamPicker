@@ -9,7 +9,6 @@ var input = document.getElementById("nameInput");
     var players = [];
     function addPlayer(){
        player = new Player(document.getElementById("nameInput").value, document.getElementById("skillSelect").value);
-       //console.log(player); 
        players.push(player);
        displayTable();
     }
@@ -29,25 +28,30 @@ var input = document.getElementById("nameInput");
 
             var row = document.createElement("tr");
             var btnRemove = document.createElement("button");
-            btnRemove.innerHTML = "REMOVE";
+            btnRemove.innerHTML = "Remove" + " " + plyr.name;
             btnRemove.id = plyr['name'];
+            btnRemove.setAttribute("btnNumber", i);
+            console.log(btnRemove.getAttribute("btnNumber"));
+            
             btnRemove.onclick = ()=> {
-               /* for(var k = 0; k < players.length; k++){
-                    let currPlayer = players[k];
-                    if(currPlayer['name'] === btnRemove.id){
-                        /*players.splice(k,1);
+                console.log(btnRemove.getAttribute("btnNumber"));
+                for(var k = 0; k < players.length; k++){
+                   //let currPlayer = players[k];
+                    if(k === btnRemove.getAttribute("btnNumber")){
+                        players.splice(k,1);
                         console.log(players);
                         
                     }
-                    clearTable();
-                    displayTable();
+                   // clearTable();
+                    //displayTable();
                       
-                } */
+                     
+                } 
                 
-                players = players.filter(player => player.name!==btnRemove.id);
+                /*players = players.filter(player => player.name!==btnRemove.id);
                 clearTable();
                 displayTable();
-                
+                */
             };
             var properties = ['name', 'skill'];
 
