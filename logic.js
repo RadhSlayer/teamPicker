@@ -27,31 +27,19 @@ var input = document.getElementById("nameInput");
             var plyr = players[i];
 
             var row = document.createElement("tr");
-            var btnRemove = document.createElement("button");
-            btnRemove.innerHTML = "Remove" + " " + plyr.name;
+            let btnRemove = document.createElement("button");
+            btnRemove.innerHTML = "Remove";
             btnRemove.id = plyr['name'];
-            btnRemove.setAttribute("btnNumber", i);
+
             console.log(btnRemove.getAttribute("btnNumber"));
             
             btnRemove.onclick = ()=> {
-                console.log(btnRemove.getAttribute("btnNumber"));
-                for(var k = 0; k < players.length; k++){
-                   //let currPlayer = players[k];
-                    if(k === btnRemove.getAttribute("btnNumber")){
-                        players.splice(k,1);
-                        console.log(players);
-                        
-                    }
-                   // clearTable();
-                    //displayTable();
-                      
-                     
-                } 
                 
-                /*players = players.filter(player => player.name!==btnRemove.id);
+                 
+                players = players.filter(player => player.name!==btnRemove.id);
                 clearTable();
                 displayTable();
-                */
+                
             };
             var properties = ['name', 'skill'];
 
