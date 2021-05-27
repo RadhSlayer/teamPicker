@@ -11,6 +11,7 @@ var input = document.getElementById("nameInput");
        player = new Player(document.getElementById("nameInput").value, document.getElementById("skillSelect").value);
        players.push(player);
        displayTable();
+       document.getElementById("nameInput").value = "";
     }
 
     class Player{
@@ -30,12 +31,9 @@ var input = document.getElementById("nameInput");
             let btnRemove = document.createElement("button");
             btnRemove.innerHTML = "Remove";
             btnRemove.id = plyr['name'];
-
-            console.log(btnRemove.getAttribute("btnNumber"));
             
             btnRemove.onclick = ()=> {
-                
-                 
+                      
                 players = players.filter(player => player.name!==btnRemove.id);
                 clearTable();
                 displayTable();
@@ -59,4 +57,8 @@ var input = document.getElementById("nameInput");
         while(tb.rows.length > 1) {
         tb.deleteRow(1);
         }
+    }
+
+    function createTeams(){
+        console.log(players);
     }
