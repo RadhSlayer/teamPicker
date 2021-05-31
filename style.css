@@ -48,12 +48,20 @@ button:hover{
 }
 
 select{
-    background-color:dodgerblue;
+    background-color:#c004b7ea;
     font-family: 'Payton One', sans-serif;
 }
 
+select:hover{
+    transform:scale(1.15);
+}
+
+select:focus{
+    outline:none;
+}
+
 input{
-    background-color:#fa9907fb;
+    background-color:#c004b7ea;
     border-radius: 4px;
     color:white;
     font-size:14px;
