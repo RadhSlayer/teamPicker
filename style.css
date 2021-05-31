@@ -1,3 +1,10 @@
+body{
+    font-family: 'Paytone One', sans-serif;
+    background-color: rgb(56,56,56);
+    color:white;
+    font-size:large;
+}
+
 #welcome-msg{
     margin-bottom:15%;
 }
@@ -7,7 +14,7 @@
 }
 
 table{
-    margin-left: 2.5%;
+    
     border-collapse: collapse;
     width:50%;
     margin-bottom: 5%;
@@ -17,4 +24,38 @@ td,th{
     border: 1px solid #dddddd00;
     text-align: center;
     padding:8px;
+}
+
+button{
+    
+    margin: 10px;
+    background-color: #5bbe5e;
+    transition: transform 0.2s;
+    font-family: 'Paytone One', sans-serif;
+    padding: 15px 32px;
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 6px;
+}
+
+.removebtn{
+    background-color: rgb(230, 87, 87);
+}
+
+select{
+    background-color:dodgerblue;
+    font-family: 'Payton One', sans-serif;
+}
+
+input{
+    background-color:#fa9907fb;
+    border-radius: 4px;
+    color:white;
+    font-size:14px;
+
+}
+
+input:focus{
+    outline:none;
 }

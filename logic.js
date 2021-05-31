@@ -1,3 +1,10 @@
+class Player{
+    constructor(name,skill){
+        this.name= name;
+        this.skill = skill;
+    }
+}
+
 var input = document.getElementById("nameInput");
     input.addEventListener("keyup", function(event){
         if(event.keyCode == 13){
@@ -14,13 +21,6 @@ var input = document.getElementById("nameInput");
        document.getElementById("nameInput").value = "";
     }
 
-    class Player{
-        constructor(name,skill){
-            this.name= name;
-            this.skill = skill;
-        }
-    }
-
     function displayTable(){
         var table = document.getElementById("playerTable");
         clearTable();
@@ -29,6 +29,7 @@ var input = document.getElementById("nameInput");
 
             var row = document.createElement("tr");
             let btnRemove = document.createElement("button");
+            btnRemove.classList.add("removebtn");
             btnRemove.innerHTML = "Remove";
             btnRemove.id = plyr['name'];
             
@@ -60,5 +61,30 @@ var input = document.getElementById("nameInput");
     }
 
     function createTeams(){
-        console.log(players);
+        clearTable();
+        let avg = computeAverage();
+        
+        var team1 = [];
+        var team2 = [];
+    }
+
+    function isAcceptableValue(teamSkillAvg, globalSkillAvg){
+        if(Math.ceil(Math.abs(globalSkillAvg-teamSkillAvg) < 3)){
+            return true;
+        }
+
+        return false;
+    }
+
+    function computeAverage(){
+        let skillAvg = 0;
+        
+        for(var i = 0; i < players.length; i++){
+            skillAvg = skillAvg + Number(players[i]['skill']);
+            //console.log(players[i]['skill']);
+            //console.log(skillAvg);
+        }
+        skillAvg = skillAvg/players.length;
+
+        return skillAvg;
     }
