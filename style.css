@@ -39,6 +39,10 @@ button{
     border-radius: 6px;
 }
 
+button:hover{
+    transform: scale(1.15);
+}
+
 .removebtn{
     background-color: rgb(230, 87, 87);
 }
@@ -59,3 +63,8 @@ input{
 input:focus{
     outline:none;
 }
+
+input:hover{
+    transform: scale(1.15);
+}
+
