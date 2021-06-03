@@ -62,7 +62,7 @@ var input = document.getElementById("nameInput");
 
     function createTeams(){
         clearTable();
-        let avg = computeAverage();
+        let avg = computeAverage(players);
         
         var team1 = [];
         var team2 = [];
@@ -76,15 +76,15 @@ var input = document.getElementById("nameInput");
         return false;
     }
 
-    function computeAverage(){
+    function computeAverage(arr){
         let skillAvg = 0;
         
-        for(var i = 0; i < players.length; i++){
-            skillAvg = skillAvg + Number(players[i]['skill']);
+        for(var i = 0; i < arr.length; i++){
+            skillAvg = skillAvg + Number(arr[i]['skill']);
             //console.log(players[i]['skill']);
             //console.log(skillAvg);
         }
-        skillAvg = skillAvg/players.length;
+        skillAvg = skillAvg/arr.length;
 
         return skillAvg;
     }
