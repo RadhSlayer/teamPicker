@@ -66,6 +66,38 @@ var input = document.getElementById("nameInput");
         
         var team1 = [];
         var team2 = [];
+
+        let pos1 = 0;
+        let pos2 = 0;
+
+        var i = players.length-1;
+
+        var sum1 = 0;
+        var sum2 = 0;
+        players.sort(compare);
+        
+
+        while(pos1 < 1+(Math.floor(players.length/2)) && pos2 < 1+(Math.floor(players.length/2)) && i >= 0){
+            
+            if(sum1 <sum2){
+                team1[pos1] = players[i];
+                pos1++;
+                sum1+= Number(players[i].skill);
+            }
+
+            else{
+                team2[pos2] = players[i];
+                pos2++;
+                sum2 += Number(players[i].skill);
+            }
+            i--;
+        }
+
+       /* if(!isAcceptableValue(computeAverage(team1), computeAverage(team2))){
+            createTeams();
+        }*/
+
+       console.log(team1, team2);
     }
 
     function isAcceptableValue(teamSkillAvg, globalSkillAvg){
@@ -87,4 +119,16 @@ var input = document.getElementById("nameInput");
         skillAvg = skillAvg/arr.length;
 
         return skillAvg;
+    }
+
+    function compare(a,b){
+        if(Number(a.skill) < Number(b.skill)){
+            return -1;
+        }
+        
+        if(Number(a.skill) > Number(b.skill)){
+            return 1;
+        }
+
+        return 0;
     }
