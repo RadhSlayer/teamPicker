@@ -81,5 +81,11 @@ input:hover{
     margin:5%;
 }
 
+br{
+    content: " ";
+    display: block;
+    margin-bottom: 0;
+    margin-top: 0;
+}
 
 
