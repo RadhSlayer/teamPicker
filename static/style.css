@@ -76,3 +76,10 @@ input:hover{
     transform: scale(1.15);
 }
 
+.teams{
+    display: inline-table;
+    margin:5%;
+}
+
+
+

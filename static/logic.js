@@ -98,16 +98,18 @@ var input = document.getElementById("nameInput");
         }*/
 
        console.log(team1, team2);
+
+       showTeams(team1,team2);
     }
 
-    function isAcceptableValue(teamSkillAvg, globalSkillAvg){
+    /*function isAcceptableValue(teamSkillAvg, globalSkillAvg){
         if(Math.ceil(Math.abs(globalSkillAvg-teamSkillAvg) < 3)){
             return true;
         }
 
         return false;
     }
-
+ */
     function computeAverage(arr){
         let skillAvg = 0;
         
@@ -131,4 +133,21 @@ var input = document.getElementById("nameInput");
         }
 
         return 0;
+    }
+
+    function showTeams(arr1, arr2){
+        document.getElementById("results").hidden = false;
+        strteam1 = "TEAM 1";
+        strteam2 = "TEAM 2";
+
+        for(var i =0; i < arr1.length; ++i){
+            strteam1 += ("<br>" + arr1[i].name + "<br>");
+        }
+
+        for(var j =0; j < arr2.length; ++j){
+            strteam2 += ("<br>" + arr2[j].name + "<br>");
+        }
+
+        document.getElementById("team1").innerHTML = strteam1;
+        document.getElementById("team2").innerHTML = strteam2;
     }
