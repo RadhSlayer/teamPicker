@@ -97,7 +97,7 @@ var input = document.getElementById("nameInput");
             createTeams();
         }*/
 
-       console.log(team1, team2);
+       //console.log(team1, team2);
 
        showTeams(team1,team2);
     }
@@ -140,13 +140,22 @@ var input = document.getElementById("nameInput");
         strteam1 = "TEAM 1";
         strteam2 = "TEAM 2";
 
+        strength1 = 0;
+        strength2 =0;
+
         for(var i =0; i < arr1.length; ++i){
             strteam1 += ("<br>" + arr1[i].name + "<br>");
+            strength1 += Number(arr1[i]['skill']);
         }
 
         for(var j =0; j < arr2.length; ++j){
             strteam2 += ("<br>" + arr2[j].name + "<br>");
+            strength2 += Number(arr2[j]['skill']);
         }
+        
+        console.log(strength1, strength2);
+        strteam1 += "<br>skill total: " + strength1 + "<br>";
+        strteam2 += "<br>skill total: " + strength2 + "<br>"; 
 
         document.getElementById("team1").innerHTML = strteam1;
         document.getElementById("team2").innerHTML = strteam2;
